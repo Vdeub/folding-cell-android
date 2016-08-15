@@ -9,83 +9,93 @@ import java.util.ArrayList;
  */
 public class Item {
 
-    private String price;
-    private String pledgePrice;
-    private String fromAddress;
-    private String toAddress;
-    private int requestsCount;
-    private String date;
-    private String time;
+    private String id;
+    private String name;
+    private String description;
+    private String airDay;
+    private String network;
+    private String banner;
+    private String status;
+    private String runtime;
 
     private View.OnClickListener requestBtnClickListener;
 
     public Item() {
     }
 
-    public Item(String price, String pledgePrice, String fromAddress, String toAddress, int requestsCount, String date, String time) {
-        this.price = price;
-        this.pledgePrice = pledgePrice;
-        this.fromAddress = fromAddress;
-        this.toAddress = toAddress;
-        this.requestsCount = requestsCount;
-        this.date = date;
-        this.time = time;
+    public Item(String id, String name, String description, String airDay, String network, String banner, String status, String runtime) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.airDay = airDay;
+        this.network = network;
+        this.banner = banner;
+        this.status = status;
+        this.runtime = runtime;
     }
 
-    public String getPrice() {
-        return price;
+    public String getId() {
+        return id;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getPledgePrice() {
-        return pledgePrice;
+    public String getName() {
+        return name;
     }
 
-    public void setPledgePrice(String pledgePrice) {
-        this.pledgePrice = pledgePrice;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFromAddress() {
-        return fromAddress;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFromAddress(String fromAddress) {
-        this.fromAddress = fromAddress;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getToAddress() {
-        return toAddress;
+    public String getAirDay() {
+        return airDay;
     }
 
-    public void setToAddress(String toAddress) {
-        this.toAddress = toAddress;
+    public void setAirDay(String airDay) {
+        this.airDay = airDay;
     }
 
-    public int getRequestsCount() {
-        return requestsCount;
+    public String getRuntime() {
+        return runtime;
     }
 
-    public void setRequestsCount(int requestsCount) {
-        this.requestsCount = requestsCount;
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
     }
 
-    public String getDate() {
-        return date;
+    public String getNetwork() {
+        return network;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setNetwork(String network) {
+        this.network = network;
     }
 
-    public String getTime() {
-        return time;
+    public String getBanner() {
+        return banner;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setBanner(String banner) {
+        this.banner = banner;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public View.OnClickListener getRequestBtnClickListener() {
@@ -103,28 +113,33 @@ public class Item {
 
         Item item = (Item) o;
 
-        if (requestsCount != item.requestsCount) return false;
-        if (price != null ? !price.equals(item.price) : item.price != null) return false;
-        if (pledgePrice != null ? !pledgePrice.equals(item.pledgePrice) : item.pledgePrice != null)
+        if (id != null ? !id.equals(item.id) : item.id != null) return false;
+        if (name != null ? !name.equals(item.name) : item.name != null)
             return false;
-        if (fromAddress != null ? !fromAddress.equals(item.fromAddress) : item.fromAddress != null)
+        if (description != null ? !description.equals(item.description) : item.description != null)
             return false;
-        if (toAddress != null ? !toAddress.equals(item.toAddress) : item.toAddress != null)
+        if (airDay != null ? !airDay.equals(item.airDay) : item.airDay != null)
             return false;
-        if (date != null ? !date.equals(item.date) : item.date != null) return false;
-        return !(time != null ? !time.equals(item.time) : item.time != null);
+        if (network != null ? !network.equals(item.network) : item.network != null)
+            return false;
+        if (banner != null ? !banner.equals(item.banner) : item.banner != null)
+            return false;
+        if (status != null ? !status.equals(item.status) : item.status != null)
+            return false;
+        return !(runtime != null ? !runtime.equals(item.runtime) : item.runtime != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result = price != null ? price.hashCode() : 0;
-        result = 31 * result + (pledgePrice != null ? pledgePrice.hashCode() : 0);
-        result = 31 * result + (fromAddress != null ? fromAddress.hashCode() : 0);
-        result = 31 * result + (toAddress != null ? toAddress.hashCode() : 0);
-        result = 31 * result + requestsCount;
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (time != null ? time.hashCode() : 0);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (airDay != null ? airDay.hashCode() : 0);
+        result = 31 * result + (network != null ? network.hashCode() : 0);
+        result = 31 * result + (banner != null ? banner.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (runtime != null ? runtime.hashCode() : 0);
         return result;
     }
 
@@ -133,11 +148,6 @@ public class Item {
      */
     public static ArrayList<Item> getTestingList() {
         ArrayList<Item> items = new ArrayList<>();
-        items.add(new Item("$14", "$270", "W 79th St, NY, 10024", "W 139th St, NY, 10030", 3, "TODAY", "05:10 PM"));
-        items.add(new Item("$23", "$116", "W 36th St, NY, 10015", "W 114th St, NY, 10037", 10, "TODAY", "11:10 AM"));
-        items.add(new Item("$63", "$350", "W 36th St, NY, 10029", "56th Ave, NY, 10041", 0, "TODAY", "07:11 PM"));
-        items.add(new Item("$19", "$150", "12th Ave, NY, 10012", "W 57th St, NY, 10048", 8, "TODAY", "4:15 AM"));
-        items.add(new Item("$5", "$300", "56th Ave, NY, 10041", "W 36th St, NY, 10029", 0, "TODAY", "06:15 PM"));
         return items;
 
     }

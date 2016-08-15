@@ -15,4 +15,10 @@
     <color name="btnRequest">#ffbf12</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="activity_background">#EDEDED</color>
+    <color name="tvdb_green">#B6D415</color>
+    <color name="series_ended_red">#880000</color>
+    <color name="divider">#CCCCCC</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_teriary">#999999</color>
 </resources>
